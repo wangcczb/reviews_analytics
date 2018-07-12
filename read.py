@@ -16,15 +16,24 @@ for d in data:
 print('留言平均長度為',sum_len/len(data),'字')
 
 #留言篩選(len<100)
-new = []
-for d in data:
-	if len(d) < 100:
-		new.append(d)
+# new = []
+# for d in data:
+# 	if len(d) < 100:
+# 		new.append(d)
+new = [d for d in data if len(d) < 100]
 print('一共有', len(new),'筆留言長度小於100字')
 
+
+
 #留言篩選(good)
-good = []
-for d in data:
-	if 'good' in d:
-		good.append(d)	
+# good = []
+# for d in data:
+# 	if 'good' in d:
+# 		good.append(d)	
+good = [d for d in data if 'good' in d]
 print('一共有', len(good),'筆留言有good')
+
+
+#留言篩選(bad,T/F)
+bad = ['bad' in d for d in data]
+print(bad)
